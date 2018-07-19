@@ -1,0 +1,26 @@
+
+<div style="padding: 5% 10% 10%">
+    <h3 style = "text-align: center" >Historial de vehiculos que han ingresado al parqueadero</h3>  
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Tipo vehiculo</th>
+            <th scope="col">Placa</th>
+            <th scope="col">Cilindraje</th>
+            <th scope="col">Fecha-Hora ingreso</th>
+            <th scope="col">Fecha-Hora salida</th>
+            <th scope="col">Total a pagar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vehiculo of vehiculos">
+            <td>{{vehiculo.tipoVehiculo}}</td>
+            <td>{{vehiculo.placa}}</td>
+            <td>{{vehiculo.cilindraje}}</td>
+            <td>{{vehiculo.fechaHoraIngreso | date: "dd/MM/yyyy hh:mm a"}}</td>
+            <td>{{vehiculo.fechaHoraSalida | date: "dd/MM/yyyy hh:mm a"}}</td>
+            <td>{{vehiculo.totalPagar}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>

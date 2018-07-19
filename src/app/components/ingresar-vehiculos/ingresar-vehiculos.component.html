@@ -1,0 +1,19 @@
+<div style="padding: 5% 30% 30%">
+    <form  >
+        <h1>Registrar vehiculo</h1>
+        <div class="form-group">
+            <label for="formGroupExampleInput">
+                <span class="required">*</span>Placa</label>
+            <input type="text" class="form-control" name="placa" id="placa" [(ngModel)]="vehiculo.placa" placeholder="Placa">
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">
+                <span class="required">*</span>Tipo vehiculo</label>
+            <select class="custom-select my-1 mr-sm-2" name="tipo" id="tipo" [(ngModel)]="vehiculo.tipoVehiculo">
+                <option value="1">CARRO</option>
+                <option value="2">MOTO</option>
+            </select>
+            <label for="formGroupExampleInput">Cilindraje</label>
+            <input type="text" class="form-control" name="cilindraje" id="cilindraje" [(ngModel)]="vehiculo.cilindraje" placeholder="Cilindraje">
+        </div>
+    </form>
+    <button type="submit" (click)="save()" class="btn btn-outline-primary">Registrar</button>
+</div>
