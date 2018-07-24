@@ -1,9 +1,9 @@
 <div style="padding: 5% 10% 10%">
-        <h2 style = "text-align: center" >Vehiculos registrados</h2>  
+    <h2 style="text-align: center">Vehículos registrados</h2>
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">Tipo vehiculo</th>
+                <th scope="col">Tipo de vehículo</th>
                 <th scope="col">Placa</th>
                 <th scope="col">Cilindraje</th>
                 <th scope="col">Fecha-Hora ingreso</th>
@@ -13,41 +13,14 @@
         <tbody>
             <tr *ngFor="let vehiculo of vehiculos">
                 <td>{{vehiculo.tipoVehiculo}}</td>
-                <td>{{vehiculo.placa}}</td>
+                <td>{{vehiculo.placa | uppercase}}</td>
                 <td>{{vehiculo.cilindraje}}</td>
                 <td>{{vehiculo.fechaHoraIngreso | date: "dd/mm/yyyy hh:mm a"}}</td>
-                <td><button type="button" (click)="update()"><img src=""></button></td>
-            </tr>
-        </tbody>
-    </table>
-    </div>
-
-
-
-<div style="padding: 5% 20% 20%">
-    <h2 style="text-align: center">Salida vehiculo</h2>
-    <table class="table">
-        <tbody>
-            <tr>
-                <th scope="col">Tipo vehiculo</th>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="col">Placa</th>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="col">Fecha-Hora ingreso</th>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="col">Fecha-Hora salida</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th scope="col">Total a pagar</th>
-                <td></td>
+                <td>
+                    <button type="button" (click)="update(vehiculo)">
+                        <img src="../assets/salir.png" width="30" height="30">
+                    </button>
+                </td>
             </tr>
         </tbody>
     </table>

@@ -27,7 +27,9 @@ export class IngresarVehiculosComponent implements OnInit {
         swal('Nuevo vehiculo', `Vehiculo ${vehiculo.placa} creado con éxito!`, 'success'),
         error => {
           console.log(error)
+          swal ('Ups!', error.error,'success');
         }
+
       }
     );
 

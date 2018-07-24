@@ -10,13 +10,15 @@ import {RouterModule,Routes} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { ListarVehiculosService } from './components/listar-vehiculos/listar-vehiculos.service';
+import { TicketComponent } from './components/ticket/ticket.component';
 
 
 const routes: Routes =[
   {path:'',redirectTo:'/ingresar',pathMatch:'full'},
   {path:'ingresar',component:IngresarVehiculosComponent},
   {path:'retirar',component:RetirarVehiculosComponent},
-  {path:'listar',component:ListarVehiculosComponent}
+  {path:'listar',component:ListarVehiculosComponent},
+  {path:'ticket',component:TicketComponent}
 ];
 
 @NgModule({
@@ -26,7 +28,8 @@ const routes: Routes =[
     IngresarVehiculosComponent,
     RetirarVehiculosComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    TicketComponent
   ],
   imports: [
     BrowserModule,

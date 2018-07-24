@@ -5,5 +5,4 @@ export class Vehiculo {
     fechaHoraSalida:Date;
     totalPagar:number;
     tipoVehiculo: string;
-
 }

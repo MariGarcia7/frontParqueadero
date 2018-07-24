@@ -14,13 +14,14 @@ export class RetirarVehiculoService {
   
   constructor(private http: HttpClient) { }
 
-  getVehiculo(placa):Observable<Vehiculo>{
-    return this.http.get<Vehiculo>(`${this.urlEndPoint}/${placa}`)
+  getVehiculos():Observable<Vehiculo[]>{
+    return this.http.get(this.urlEndPoint).pipe(map(response => response as Vehiculo[]));
   }
 
   update(vehiculo:Vehiculo):Observable<Vehiculo>{
-    return this.http.put<Vehiculo>(`${this.urlEndPoint}/${vehiculo.placa}`,
-    vehiculo,{headers:this.httpHeaders})
+    console.log(vehiculo);
+    debugger;
+    return this.http.put<Vehiculo>(this.urlEndPoint, vehiculo);
   }
   
 }
