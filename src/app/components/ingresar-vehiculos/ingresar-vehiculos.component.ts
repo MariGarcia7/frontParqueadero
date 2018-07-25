@@ -24,12 +24,12 @@ export class IngresarVehiculosComponent implements OnInit {
     this.ingresarVehiculo.create(this.vehiculo).subscribe(
       vehiculo => {
         this.router.navigate(['/retirar']),
-        swal('Nuevo vehiculo', `Vehiculo ${vehiculo.placa} creado con éxito!`, 'success'),
-        error => {
-          console.log(error)
-          swal ('Ups!', error.error,'success');
-        }
-
+        swal('Registro exitoso', `Vehiculo ${vehiculo.placa} creado con éxito!`, 'success')
+      },
+      error => {
+        console.log(error)
+        debugger;
+        swal('Error', error.error.message , 'error')
       }
     );
 
