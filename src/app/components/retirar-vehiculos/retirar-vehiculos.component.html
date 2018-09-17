@@ -17,7 +17,7 @@
                 <td>{{vehiculo.cilindraje}}</td>
                 <td>{{vehiculo.fechaHoraIngreso | date: "dd/mm/yyyy hh:mm a"}}</td>
                 <td>
-                    <button type="button" (click)="update(vehiculo)">
+                    <button type="button" (click)="update(vehiculo)" data-toggle="modal" data-target="#factura">
                         <img src="../assets/salir.png" width="30" height="30">
                     </button>
                 </td>
@@ -25,3 +25,46 @@
         </tbody>
     </table>
 </div>
+
+<div class="modal" tabindex="-1" role="dialog" id="factura">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Factura</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="col">Tipo vehiculo</th>
+                        <td>{{ticket.tipoVehiculo}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Placa</th>
+                        <td>{{ticket.placa | uppercase}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Fecha-Hora ingreso</th>
+                        <td>{{ticket.fechaHoraIngreso | date: "dd/MM/yyyy hh:mm a"}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Fecha-Hora salida</th>
+                        <td>{{ticket.fechaHoraSalida | date: "dd/MM/yyyy hh:mm a"}}</td>
+                    </tr>
+        
+                    <tr>
+                        <th scope="col">Total a pagar</th>
+                        <td>{{ticket.totalPagar}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="recargar()">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>

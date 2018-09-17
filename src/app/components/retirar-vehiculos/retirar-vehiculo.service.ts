@@ -20,7 +20,6 @@ export class RetirarVehiculoService {
 
   update(vehiculo:Vehiculo):Observable<Vehiculo>{
     console.log(vehiculo);
-    debugger;
     return this.http.put<Vehiculo>(this.urlEndPoint, vehiculo);
   }
   

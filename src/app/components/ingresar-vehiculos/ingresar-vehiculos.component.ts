@@ -32,7 +32,5 @@ export class IngresarVehiculosComponent implements OnInit {
         swal('Error', error.error.message , 'error')
       }
     );
-
   }
-
 }

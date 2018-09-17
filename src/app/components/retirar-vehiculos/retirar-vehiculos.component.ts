@@ -7,17 +7,19 @@ import swal from 'sweetalert2';
 @Component({
   selector: 'app-retirar-vehiculos',
   templateUrl: './retirar-vehiculos.component.html',
-  styleUrls: ['./retirar-vehiculos.component.css']
 })
 
 export class RetirarVehiculosComponent implements OnInit {
 
   vehiculos: Vehiculo[];
-  private vehiculo: Vehiculo = new Vehiculo();
+  private ticket: Vehiculo ;
 
   constructor(private retirarvehiculo: RetirarVehiculoService,
     private router: Router,
-    private activateRoute: ActivatedRoute) { }
+    private activateRoute: ActivatedRoute) {
+
+      this.ticket=new Vehiculo();
+     }
 
   ngOnInit() {
     this.retirarvehiculo.getVehiculos().subscribe(
@@ -29,13 +31,12 @@ export class RetirarVehiculosComponent implements OnInit {
   }
 
   update(vehiculo:Vehiculo){
-    debugger;
     this.retirarvehiculo.update(vehiculo)
-      .subscribe(vehiculo => this.router.navigate(['/ticket']),
-        error => {
-          console.log(error)
-          swal ('Ups!', 'Retiro exitoso','success');
-        }
-      )
+      .subscribe(vehiculo => this.ticket = vehiculo);
+      console.log(this.ticket) 
+  }
+
+  public recargar(){
+    window.location.reload();
   }
 }
